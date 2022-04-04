@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAbileApp.Pages.StartPage">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="StartAndExpand">
+                <Label FontSize="20" Text="{Binding CurrentUser.Login}"></Label>
+                <Button WidthRequest="100" HeightRequest="45" FontSize="15" Text="Выход" VerticalOptions="StartAndExpand" HorizontalOptions="End" Clicked="Button_Clicked_2"></Button>
+            </StackLayout>
+            <StackLayout  VerticalOptions="Center" HorizontalOptions="Center" >
+                <Button Text="Посмотреть оценки" Clicked="Button_Clicked"></Button>
+                <Button Text="Посмотреть расписание занятий" Clicked="Button_Clicked_1"></Button>
+            </StackLayout>                      
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

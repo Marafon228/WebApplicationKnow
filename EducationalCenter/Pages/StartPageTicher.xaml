@@ -1,0 +1,34 @@
+﻿<Page x:Class="EducationalCenter.Pages.StartPageTicher"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalCenter.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPageTicher"
+      Background="LightBlue"
+      Name="StarPageTicherName">
+
+    <Grid DataContext="{Binding ElementName=StarPageTicherName, Path=.}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="9*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            
+            <Button Content="Оценки" Width="100" Height="25" Margin="30 0 0 0" Click="Button_Click"></Button>
+            <Button Content="Группы" Width="100" Height="25" Margin="30 0 0 0" Click="Btn_View_Group"></Button>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <TextBlock Text="{Binding GlobalUser.FIO}" Width="180" Height="20"></TextBlock>
+            <Button Content="Выйти" Width="70" Height="20" Click="Button_Click_1"></Button>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
+    </Grid>
+</Page>

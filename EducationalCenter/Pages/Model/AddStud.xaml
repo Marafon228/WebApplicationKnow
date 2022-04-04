@@ -1,0 +1,51 @@
+﻿<Page x:Class="EducationalCenter.Pages.Model.AddStud"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EducationalCenter.Pages.Model"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddStud"
+      Background="LightBlue"
+      Name="AddStudName">
+
+    <Grid DataContext="{Binding ElementName=AddStudName, Path=.}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Логин" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.Login}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Пароль" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.Password}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Фамилия имя отчество" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.FIO}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Домашний адрес" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.Address}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Телефон" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.Phone}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Почта" Grid.Row="6" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <TextBox Text="{Binding CurrentUser.Email}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBox>
+        <TextBlock Text="Группа" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock>
+        <ComboBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                  ItemsSource="{Binding ComboGroup, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValuePath="." DisplayMemberPath="Name"
+                  Name="CBSubject" Width="70"></ComboBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 10 0 10">
+            <Button Content="Сохранить" Click="Btn_Save"></Button>
+            <Button Content="Отмена" Margin="50 0 0 0" Click="Btn_Back"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
